@@ -62,6 +62,18 @@ body {
 .btn { padding: 8px 16px; border: 1px solid var(--ruihe-border); background: white; color: var(--ruihe-text); font-size: 13px; border-radius: 4px; cursor: pointer; font-family: inherit; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
 .btn:hover { border-color: var(--ruihe-green); color: var(--ruihe-green); background: var(--ruihe-cream); }
 
+/* Page nav */
+.site-nav-bar { background: var(--ruihe-forest); position: sticky; top: 0; z-index: 101; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 10px 16px; }
+.site-nav a {
+  padding: 9px 16px; border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.85); text-decoration: none; transition: all 0.2s;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25);
+}
+.site-nav a:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.55); color: white; }
+.site-nav a.active { background: var(--ruihe-gold); color: var(--ruihe-forest); border-color: var(--ruihe-gold); font-weight: 700; }
+.print-bar { top: 47px; }
+
 /* Main */
 main { padding: 48px 0 80px; }
 .greeting { background: white; border: 1px solid var(--ruihe-border); border-left: 4px solid var(--ruihe-green); padding: 32px 40px; margin-bottom: 40px; font-size: 15px; line-height: 2; color: var(--ruihe-text); box-shadow: var(--ruihe-shadow); }
@@ -144,7 +156,7 @@ ul.clean li::before { content: '◆'; position: absolute; left: 0; color: var(--
 /* Print */
 @media print {
   body { background: white; }
-  .print-bar { display: none !important; }
+  .print-bar, .site-nav-bar { display: none !important; }
   .site-header { background: white !important; color: var(--ruihe-text) !important; border-bottom: 3px solid var(--ruihe-green); padding: 20px 0; }
   .site-header .brand-name, .site-header .brand-tagline { color: var(--ruihe-text) !important; }
   .header-title h1 { color: var(--ruihe-forest) !important; }
@@ -181,6 +193,16 @@ ul.clean li::before { content: '◆'; position: absolute; left: 0; color: var(--
 </style>
 </head>
 <body>
+
+<!-- 選單列（固定頂部） -->
+<div class="site-nav-bar">
+  <nav class="site-nav">
+    <a href="./index.html">主報告</a>
+    <a href="./market.html">行情評估</a>
+    <a href="./清運估價1.html">清運估價評估 1</a>
+    <a href="./清運估價2.html" class="active">清運估價評估 2</a>
+  </nav>
+</div>
 
 <!-- Header -->
 <header class="site-header">

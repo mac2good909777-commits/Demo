@@ -32,6 +32,18 @@ p, li, td, th, div, span{ word-break:break-word; overflow-wrap:break-word; }
 .gline{ height:3px; background:var(--gold); }
 .body{ background:#fff; padding:26px 36px 0; }
 
+/* PAGE NAV */
+.site-nav-bar{ background:var(--forest); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+.site-nav{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding:10px 16px; }
+.site-nav a{
+  padding:9px 16px; border-radius:4px; font-size:13px; font-weight:600; letter-spacing:.5px;
+  color:rgba(255,255,255,.85); text-decoration:none; transition:all .2s;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);
+}
+.site-nav a:hover{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.55); color:#fff; }
+.site-nav a.active{ background:var(--gold); color:var(--forest); border-color:var(--gold); font-weight:700; }
+@media print { .site-nav-bar{ display:none !important; } }
+
 /* SUBJECT */
 .sbj{ border:1px solid var(--border); border-radius:3px; margin-bottom:22px; overflow:hidden; }
 .sbj-hd{ background:var(--bg-card); padding:9px 16px; border-bottom:1px solid var(--border); font-size:11px; font-weight:700; color:var(--forest); letter-spacing:1.5px; text-transform:uppercase; }
@@ -178,6 +190,14 @@ tr.warn td{ background:#fff8e1 !important; }
 </style>
 </head>
 <body>
+<div class="site-nav-bar">
+  <nav class="site-nav">
+    <a href="./index.html">主報告</a>
+    <a href="./market.html" class="active">行情評估</a>
+    <a href="./清運估價1.html">清運估價評估 1</a>
+    <a href="./清運估價2.html">清運估價評估 2</a>
+  </nav>
+</div>
 <div class="wrap">
 
 <!-- HEADER -->
